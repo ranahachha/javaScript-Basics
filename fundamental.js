@@ -31,3 +31,8 @@ const beer = {
 
 const {brand, est, alc} = beer;
 console.log(`${brand} was established in ${est}. The beer alcohol volume is ${alc}%.`)
+
+// assigning a different name than the object property name
+
+const{brand : make, est : estd, alc: alcohol} = beer;
+console.log(`${make} was established in ${estd}. The beer alcohol volume is ${alcohol}%.`)
