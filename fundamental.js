@@ -91,4 +91,43 @@ function mul(...num){
     }
     return total;
 }
-console.log(mul(2, 3, 4))
+console.log(mul(2, 3, 4));
+
+console.log("--------------------------");
+
+/* js function: the difference between named and anonymous function is that
+anonymous function is declared at runtime: means defined and called at the same Time */
+
+//eg. named function
+function name(){
+    //body 
+}
+
+//eg. anonymous function
+
+const noname = function(){
+    //body
+}
+/* 
+Higher-Order-Functions : Functions that operate on other functions, either by 
+taking them as arguments or by returning them, are called higher-order functions */
+
+function greaterThan(n) {
+    return m => m > n;
+  }
+let greaterThan10 = greaterThan(10);
+console.log(greaterThan10(11));//true
+
+function multiplier(factor){
+    return x => x * factor;
+}
+let double = multiplier(2);
+console.log(double(2));
+
+let triple = multiplier(3);
+console.log(triple(3));
+
+console.log(double);
+
+
+
