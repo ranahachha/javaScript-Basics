@@ -129,5 +129,41 @@ console.log(triple(3));
 
 console.log(double);
 
+/* map function: creates and returns a new array with 
+each element being the result of the callback function.
+You shouldn't be using map if:
+you're not using the array it returns; and/or
+you're not returning a value from the callback. */ 
+
+const user = [
+    { name: 'Robin', isDeveloper: true },
+    { name: 'Markus', isDeveloper: false },
+    { name: 'John', isDeveloper: true },
+    { name: 'Neekhil', isDeveloper: true}
+];
+
+user.map(user => console.log(user.name));
+
+/* filter: filter returns new array with elements that passes the test through callback
+if no element passes test empty array will be returned */
+console.log("---------------------");
+user.filter(user => user.isDeveloper).map(user => console.log(user.name));
+
+/* reduce method  executes a reducer function (that you provide) on each element of the array,
+ resulting in single output value. */
+
+ const numbers = [1, 2, 3, 4, 5, 6];
+
+ //sum is a reducer function 
+ let sum = (acc, val) => acc + val;
+
+ let result = numbers.reduce(sum);
+ console.log(result);
+
+
+
+
+
+
 
 
