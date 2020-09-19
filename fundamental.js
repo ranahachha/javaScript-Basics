@@ -161,6 +161,59 @@ user.filter(user => user.isDeveloper).map(user => console.log(user.name));
  console.log(result);
 
 
+ //class
+
+ class Guitar{
+     constructor(brand, price){
+         this.brand = brand;
+         this.price = price;
+     }
+
+     display(){
+         return `${this.brand} costs ${this.price}`;
+     }
+ }
+
+ let g1 = new Guitar("cort", 150);
+ console.log(g1.display());
+
+ //class inheritance
+
+ class Acoustic extends Guitar{
+     constructor(brand, price, color){
+         super(brand, price);
+         this.color = color;
+     }
+     display(){
+        return `${this.brand} costs ${this.price}. It is ${this.color}`;
+     }
+ }
+
+ let acoustic1= new Acoustic("cort", 150, "Red");
+ console.log(acoustic1.display());
+
+ //getter and setter
+
+ class Person {
+     constructor(name, vorname){
+         this.name = name;
+         this.vorname = vorname;
+     }
+     get desc(){
+         return `${this.name} ${this.vorname} is a student`;
+     }
+     set desc(value) {
+         const parts = value.split(' ');
+
+         this.name = parts[0];
+         this.vorname = parts[1];
+     }
+ }
+
+ let p = new Person();
+ p.desc = 'Rai Neekhil' // getter and setter are now obj properties
+ console.log(p.desc);
+
 
 
 
