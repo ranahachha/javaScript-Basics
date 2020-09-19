@@ -129,6 +129,19 @@ console.log(triple(3));
 
 console.log(double);
 
+const multiplyby2 = input => input * 2;
+const prime = [2, 3, 5, 7];
+function arrayMultiplyby2(array, multiplyby2){
+    const output = []
+    for(let i = 0; i<array.length; i++){
+        output.push(multiplyby2(array[i]));
+    }
+    return output;
+}
+
+const multipleof2 = arrayMultiplyby2(prime, multiplyby2);
+console.log(multipleof2);
+
 /* map function: creates and returns a new array with 
 each element being the result of the callback function.
 You shouldn't be using map if:
@@ -211,7 +224,7 @@ user.filter(user => user.isDeveloper).map(user => console.log(user.name));
  }
 
  let p = new Person();
- p.desc = 'Rai Neekhil' // getter and setter are now obj properties
+ p.desc = 'Rai Neekhil' // getter and setter are  obj properties
  console.log(p.desc);
 
 
