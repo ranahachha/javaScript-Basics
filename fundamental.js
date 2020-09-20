@@ -266,6 +266,32 @@ const unboundSubject = subject.getSubject;
 const boundSubject = unboundSubject.bind(subject);
 console.log(boundSubject());
 
+//working with fetch api
+
+const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=4c77862f';
+const movies = fetch(url)
+    .then(response => response.json())
+    .then(json => console.log(json.Title))
+    .catch(err => err);
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(()=>resolve([1, 2, 3]), 1000)
+});    
+promise.then(result => console.log(result))
+
+
+//async always return promise 
+async function getId(){
+    const ids = await promise;
+    console.log(ids);
+    return ids;
+}
+getId();
+
+//we can use then to consume the result 
+getId().then(result => console.log(result));
+
+
 
 
 
