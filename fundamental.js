@@ -227,6 +227,44 @@ user.filter(user => user.isDeveloper).map(user => console.log(user.name));
  p.desc = 'Rai Neekhil' // getter and setter are  obj properties
  console.log(p.desc);
 
+ function show(){
+     console.log(`${this.name} ${this.vorname}`);
+ }
+ console.log(`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
+ show.call(p);
+
+
+ /* call apply bind: call is a technique to borrows another object methods 
+ apply: same as call but 2nd argument must be an array
+ bind:method creates a new function that, when called, has its this keyword set
+to the provided value, with a given sequence of arguments preceding any provided when the new function is called.*/ 
+
+ const club = {
+     name: 'abc club',
+     estd: 1991,
+     display: function(){
+         console.log(`${this.name} was established in ${this.estd}`);
+     }
+ }
+
+ club.display();
+
+ const team = {
+     name: 'def',
+     estd: 2000
+ }
+club.display.call(team);
+
+let subject = {
+    name: 'JavaScript',
+    getSubject: function(){
+        return this.name;
+    }
+}
+
+const unboundSubject = subject.getSubject;
+const boundSubject = unboundSubject.bind(subject);
+console.log(boundSubject());
 
 
 
